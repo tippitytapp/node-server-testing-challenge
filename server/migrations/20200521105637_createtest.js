@@ -24,7 +24,6 @@ exports.up = function(knex) {
                         .notNullable()
                 athlete.integer('number', 2)
                         .notNullable()
-                        .unique()
             })
 };
 
