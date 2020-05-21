@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    console.log(req.body)
     Athletes.add(req.body)
             .then(resp => {
                 res.status(201).json({
