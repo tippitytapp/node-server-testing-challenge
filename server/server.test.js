@@ -18,7 +18,7 @@ describe('server tests', () => {
            it(' receives a 201', () => {
                return supertest(server)
                     .post('/api/athletes')
-                    .send({fname: "Marc", lname: "Tapp", team: 2, position: "short stop", number: 2})
+                    .send({fname: "Marc", lname: "Tapp", team: 2, position: "short stop", number: 3})
                     .set('Accept', 'application/json')
                     .expect('Content-Type', /json/)
                     .expect(201)
