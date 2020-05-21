@@ -16,5 +16,37 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+    console.log(req.body)
+    Athletes.add(req.body)
+            .then(resp => {
+                res.status(201).json({
+                    data: resp
+                })
+            })
+            .catch(error => {
+                res.status(500).json({
+                    errorMessage: 'Error adding Athlete',
+                    error
+                })
+            })
+})
+
+router.delete('/:id', (req, res) => {
+    const id = req.params.id 
+        Athletes.remove(id)
+            .then(athlete => {
+                res.status(200).json({
+                    deletedAthlete: athlete
+                })
+            })
+            .catch(error => {
+                res.status(500).json({
+                    errorMessage: "Error Deleting Object",
+                    error
+                })
+            })
+})
+
 
 module.exports=router;
