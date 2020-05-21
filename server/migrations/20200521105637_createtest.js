@@ -17,7 +17,7 @@ exports.up = function(knex) {
                         .unsigned()
                         .notNullable()
                         .references('id')
-                        .inTable('team')
+                        .inTable('teams')
                         .onDelete('RESTRICT')
                         .onUpdate('CASCADE')
                 athlete.string('position')
